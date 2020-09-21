@@ -6,6 +6,20 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         box-sizing: border-box;
     }
+
+    img {
+        width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Fredoka One', cursive;
+        font-weight: 300;
+    }
 `;
 
 export default GlobalStyle;

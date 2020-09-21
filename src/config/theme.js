@@ -1,9 +1,9 @@
 export default {
   // Colors
   colors: {
-      primary: '#8A56BB',
-      secondary: '#ff6c87',
-      terciary: '#363a43',
+      primary: '#EF9394',
+      secondary: '#F7C878',
+      terciary: '#A48571',
       black: '#000000',
       white: '#ffffff',
       grey: '#f0f0f0',
