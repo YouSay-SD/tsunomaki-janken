@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import video from '../../video.mp4';
+import { Panel } from './Panel';
 
 const JankenStyled = styled.div`
   background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  height: 100vh;
 `;
 
 const VideoStyled = styled.video`
@@ -11,6 +13,7 @@ const VideoStyled = styled.video`
   height: 800px;
   object-fit: cover;
   object-position: center;
+  vertical-align: top;
 `;
 
 export const JankenScreen = () => {
@@ -18,6 +21,8 @@ export const JankenScreen = () => {
     <JankenStyled>
       
       <VideoStyled loop muted autoPlay src={ video } type="video/mp4" />
+
+      <Panel />
 
     </JankenStyled>
   )
