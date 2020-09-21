@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './config/globalStyle';
 import theme from './config/theme';
 import fonts from './config/fonts';
-import { HomeScreen } from './components/home/HomeScreen';
+import { AppRouter } from './routers/AppRouter';
 
 export const TsunomakiJankenApp = () => {
   return (
@@ -11,7 +11,7 @@ export const TsunomakiJankenApp = () => {
       <ThemeProvider theme={ fonts }>
       
         <GlobalStyle />
-        <HomeScreen />
+        <AppRouter />
 
       </ThemeProvider>
     </ThemeProvider>

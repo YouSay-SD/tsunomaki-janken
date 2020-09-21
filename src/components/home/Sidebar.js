@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { respondBelow } from '../../helpers/breakPoints';
 import { flexCenter } from '../../helpers/mixins';
 import logo from '../../logo.png';
+import { Navbar } from '../../ui/Navbar';
 
 const SidebarStyled = styled.aside`
   background-color: ${ props => props.theme.colors.white };
@@ -20,20 +20,6 @@ const LogoStyled = styled.div`
   margin-bottom: 50px;
 `;
 
-const TitleStyled = styled.div`
-  text-align: center;
-
-  h2 {
-    font-size: 45px;
-    color: ${ props => props.theme.colors.primary };
-
-  /* Mobile */
-  ${respondBelow.sm`
-    font-size: 25px;
-  `}
-  }
-`;
-
 export const Sidebar = () => {
   return (
     <SidebarStyled>
@@ -44,11 +30,7 @@ export const Sidebar = () => {
 
       </LogoStyled>
 
-      <TitleStyled>
-
-        <h2>Start Game!</h2>
-
-      </TitleStyled>
+      <Navbar />
       
     </SidebarStyled>
   )
