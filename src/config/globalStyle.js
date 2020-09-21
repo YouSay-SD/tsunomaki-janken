@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
     }
 
+    a,
     h1,
     h2,
     h3,
@@ -19,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
     h6 {
         font-family: 'Fredoka One', cursive;
         font-weight: 300;
+    }
+
+    a {
+        text-decoration: none;
     }
 `;
 
