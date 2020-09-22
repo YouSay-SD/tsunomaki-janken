@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TokenGrid } from './TokenGrid';
 
 const PanelStyled = styled.div`
   /* background-color: ${ props => props.theme.colors.rose }; */
@@ -24,11 +25,7 @@ export const Panel = () => {
   return (
     <PanelStyled>
       
-      <div>
-
-        <Token />
-
-      </div>
+      <TokenGrid />
 
     </PanelStyled>
   )
