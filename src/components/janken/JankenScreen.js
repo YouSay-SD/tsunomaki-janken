@@ -20,7 +20,7 @@ export const JankenScreen = () => {
   return (
     <JankenStyled>
       
-      <VideoStyled loop muted autoPlay src={ video } type="video/mp4" />
+      <VideoStyled loop autoPlay src={ video } type="video/mp4" />
 
       <Panel />
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { flexCenter } from '../../helpers/mixins';
-import logo from '../../logo.png';
 import { Navbar } from '../../ui/Navbar';
 
 const SidebarStyled = styled.aside`
@@ -26,7 +25,7 @@ export const Sidebar = () => {
 
       <LogoStyled>
 
-        <img src={ logo } title="watame-logo" alt="watame-logo" />
+        <img src="/images/logos/logo.png" title="watame-logo" alt="watame-logo" />
 
       </LogoStyled>
 

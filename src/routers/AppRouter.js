@@ -5,7 +5,7 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import { HomeScreen } from '../components/home/HomeScreen';
+import HomeScreen from '../components/homeScreen';
 import { JankenScreen } from '../components/janken/JankenScreen';
 
 export const AppRouter = () => {
