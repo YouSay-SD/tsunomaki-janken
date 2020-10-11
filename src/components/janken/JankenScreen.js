@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import video from '../../video.mp4';
 import { Panel } from './Panel';
 
 const JankenStyled = styled.div`
@@ -20,7 +19,7 @@ export const JankenScreen = () => {
   return (
     <JankenStyled>
       
-      <VideoStyled loop autoPlay src={ video } type="video/mp4" />
+      <VideoStyled loop autoPlay src='/videos/video.mp4' type="video/mp4" />
 
       <Panel />
 

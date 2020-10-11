@@ -5,8 +5,8 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import HomeScreen from '../components/homeScreen';
-import { JankenScreen } from '../components/janken/JankenScreen';
+// import { JankenScreen } from '../components/janken/JankenScreen';
+import Home from '../pages/home';
 
 export const AppRouter = () => {
   return (
@@ -16,9 +16,9 @@ export const AppRouter = () => {
 
       <Switch>
 
-        <Route exact path="/" component={ HomeScreen } />
+        <Route exact path="/" component={ Home } />
 
-        <Route exact path="/janken" component={ JankenScreen } />
+        {/* <Route exact path="/janken" component={ JankenScreen } /> */}
 
         <Redirect to="/" />
 
