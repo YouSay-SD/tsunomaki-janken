@@ -1,11 +1,11 @@
 import React from 'react';
-import Hero from '../components/hero';
+import { HeroContainer } from '../containers/hero';
 
 export default function Home() {
   return (
     <>
 
-      <Hero />
+      <HeroContainer />
 
     </>
   )
