@@ -1,8 +1,8 @@
 import React from 'react';
-import Hero from '../components/hero';
+import { Hero } from '../components';
 
-export const HeroContainer = () => {
+export function HeroContainer({ children }) {
   return (
-    <Hero />
+    <Hero>{ children }</Hero>
   )
 }
