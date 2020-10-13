@@ -31,4 +31,8 @@ export const Navbar = styled.nav`
       font-size: 25px;
     `}
   }
+
+  span {
+    display: inline-block;
+  }
 `;

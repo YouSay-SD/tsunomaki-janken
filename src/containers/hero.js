@@ -12,9 +12,9 @@ export function HeroContainer({ children }) {
   })
 
   return (
-      <Hero>
-        <Hero.Background style={ backgroundAnimated } />
-        { children }
-      </Hero>    
+    <Hero>
+      <Hero.Background style={ backgroundAnimated } />
+      { children }
+    </Hero>    
   )
 }
