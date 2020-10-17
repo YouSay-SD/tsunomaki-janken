@@ -23,8 +23,14 @@ export const Navbar = styled.nav`
   text-align: center;
 
   a {
-    font-size: 45px;
+    font-size: 3em;
+    display: inline-block;
     color: ${ props => props.theme.colors.primary };
+    transition: transform .5s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     /* Mobile */
     ${respondBelow.sm`

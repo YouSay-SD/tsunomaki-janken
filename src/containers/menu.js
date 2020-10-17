@@ -6,13 +6,11 @@ import { animated, useSprings } from 'react-spring';
 
 export function MenuContainer() {
   const text = [...'Start Game!']
-  const from = { transform: 'translateX(100px) scale(3)', opacity: 0 }
-  const to = { transform: 'translateX(0px) scale(1)', opacity: 1 }
 
   const base = {
     config: { mass: 5, tension: 2000, friction: 200 },
-    from: from,
-    to: to,
+    from: { transform: 'translateX(100px)', opacity: 0 },
+    to: { transform: 'translateX(0px)', opacity: 1 },
   }
 
   const springs = useSprings(text.length, text.map((t, i) => ({ ...base, delay: 100 * i })))
