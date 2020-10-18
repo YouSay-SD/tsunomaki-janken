@@ -4,7 +4,6 @@ import { useTransition } from 'react-spring';
 import { useEffect } from 'react';
 import backgrounds from '../fixtures/backgrounds.json';
 
-
 export function HeroContainer() {
   const [index, setIndex] = useState(0);
   const increment = () => setIndex(index => (index + 1) % backgrounds.length)
@@ -12,7 +11,7 @@ export function HeroContainer() {
   useEffect(() => {
     const interval = setInterval(() => {
       increment()
-    }, 2000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [index])
 
@@ -20,7 +19,6 @@ export function HeroContainer() {
     from: {opacity: 0, transform: 'translateX(300px) scale(1.1)'},
     enter: {opacity: 1, transform: 'translateX(0px) scale(1)'},
     leave: {opacity: 0, transform: 'translateX(-300px) scale(0.9)'},
-    // config: {mass: 5, tension: 500, friction: 200},
   });
   
   return (

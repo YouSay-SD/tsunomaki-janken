@@ -43,6 +43,7 @@ export const Navbar = styled.nav`
 
   a {
     font-size: 3em;
+    letter-spacing: 5px;
     display: inline-block;
     color: ${ props => props.theme.colors.primary };
     transition: transform .5s ease;
@@ -58,5 +59,14 @@ export const Navbar = styled.nav`
 
   span {
     display: inline-block;
+    -webkit-text-stroke: 2px ${ props => props.theme.colors.terciary };
+
+    &:nth-child(odd) {
+      color: ${ props => props.theme.colors.primary };
+    }
+
+    &:nth-child(even) {
+      color: ${ props => props.theme.colors.secondary };
+    }
   }
 `;
