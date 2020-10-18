@@ -29,6 +29,9 @@ export const Container = styled.div`
 
   ${respondBelow.sm`
     background-color: ${props => props.theme.colors.white};
+    &:after {
+      display: none;
+    }
   `}
 `;
 
