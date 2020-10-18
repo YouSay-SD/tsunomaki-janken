@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Background } from './styles/heroStyled';
+import { Container, Background } from './styles/hero';
 
 export default function Hero({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;

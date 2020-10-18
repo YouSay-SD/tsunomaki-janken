@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Logo, Navbar } from './styles/menuStyled';
+import { Container, Logo, Navbar } from './styles/menu';
 
 export default function Menu({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;

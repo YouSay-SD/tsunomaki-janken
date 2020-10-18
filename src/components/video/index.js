@@ -1,13 +1,6 @@
 import React from 'react';
-import { Container } from './styles/videoStyled';
+import { Container } from './styles/video';
 
 export default function Video({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
-
-// Menu.Logo = function MenuLogo({ children, ...restProps }) {
-//   return <Logo {...restProps}>{children}</Logo>;
-// }
-
-
-
