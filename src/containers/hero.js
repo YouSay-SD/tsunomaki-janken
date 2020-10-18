@@ -3,18 +3,18 @@ import { Hero } from '../components';
 import { useSpring } from 'react-spring';
 
 
-export function HeroContainer({ children }) {
-
-  // Animated: Background
-  const backgroundAnimated = useSpring({
+export function HeroContainer() {
+  const fade = useSpring({
     from: { transform: 'translateX(100px)', opacity: 0 },
     to: { transform: 'translateX(0px)', opacity: 1 },
   })
 
   return (
     <Hero>
-      <Hero.Background style={ backgroundAnimated } />
-      { children }
+      <Hero.Image
+        style={ fade }
+        src='/images/backgrounds/watame-background.png' 
+      />
     </Hero>    
   )
 }

@@ -2,25 +2,32 @@ import styled from 'styled-components/macro';
 import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled.div`
-  background: linear-gradient(90deg, rgba(${ props => props.theme.colorsRGB.white },1) 88%, rgba(${ props => props.theme.colorsRGB.white },0) 100%);
-  max-width: 45%;
+  background-color: ${props => props.theme.colors.white};
   width: 100%;
   height: 100%;
   position: relative;
-  padding: 50px 70px 50px 50px;
+  padding: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -149px;
+    background: linear-gradient(90deg, rgba(${ props => props.theme.colorsRGB.white },1) 50%, rgba(${ props => props.theme.colorsRGB.white },0) 100%);
+    width: 150px;
+    height: 100%;
+    z-index: 1;
+  }
+
   ${respondBelow.md`
-    max-width: 55%;
-    padding: 20px 40px 20px 20px;
+    padding: 20px;
   `}
 
   ${respondBelow.sm`
-    max-width: initial;
-    padding: 20px;
     background-color: ${props => props.theme.colors.white};
   `}
 `;
