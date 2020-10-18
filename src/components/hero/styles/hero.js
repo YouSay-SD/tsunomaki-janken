@@ -11,8 +11,12 @@ export const Container = styled.div`
   `}
 `;
 
-export const Image = styled(animated.img)`
-  object-fit: cover;
-  object-position: center;
+export const Background = styled(animated.div)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: center;
 `;

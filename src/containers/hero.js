@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Hero } from '../components';
-import { useSpring } from 'react-spring';
+import { useTransition } from 'react-spring';
+import { useEffect } from 'react';
+import backgrounds from '../fixtures/backgrounds.json';
 
 
 export function HeroContainer() {
-  const fade = useSpring({
-    from: { transform: 'translateX(100px)', opacity: 0 },
-    to: { transform: 'translateX(0px)', opacity: 1 },
-  })
+  const [index, setIndex] = useState(0);
+  const increment = () => setIndex(index => (index + 1) % backgrounds.length)
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      increment()
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [index])
+
+  const transitions = useTransition(backgrounds[index], item => item.id, {
+    from: {opacity: 0, transform: 'translateX(300px) scale(1.1)'},
+    enter: {opacity: 1, transform: 'translateX(0px) scale(1)'},
+    leave: {opacity: 0, transform: 'translateX(-300px) scale(0.9)'},
+    // config: {mass: 5, tension: 500, friction: 200},
+  });
+  
   return (
     <Hero>
-      <Hero.Image
-        style={ fade }
-        src='/images/backgrounds/watame-background.png' 
-      />
+      {
+        transitions.map(({item, props, key}) => {
+          return <Hero.Background
+            key={key}
+            style={{ 
+              backgroundImage: `url(${item.url})`,
+              ...props 
+            }}
+          />
+        })
+      }
     </Hero>    
   )
 }
