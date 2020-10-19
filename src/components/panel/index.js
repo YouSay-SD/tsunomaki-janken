@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container } from './styles/panel';
+import { Container, Title } from './styles/panel';
 
 export default function Panel({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
 
-// Menu.Logo = function MenuLogo({ children, ...restProps }) {
-//   return <Logo {...restProps}>{children}</Logo>;
-// }
+Panel.Title = function PanelTitle({ children, ...restProps }) {
+  return <Title {...restProps}>{children}</Title>;
+}
 

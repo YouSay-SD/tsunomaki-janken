@@ -7,4 +7,5 @@ export const Container = styled.video`
   object-fit: cover;
   object-position: center;
   vertical-align: top;
+  filter: blur(15px);
 `;
