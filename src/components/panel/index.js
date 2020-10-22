@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Title } from './styles/panel';
+import { Container, Title, Grid } from './styles/panel';
 
 export default function Panel({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -8,4 +8,9 @@ export default function Panel({ children, ...restProps }) {
 Panel.Title = function PanelTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>;
 }
+
+Panel.Grid = function PanelGrid({ children, ...restProps }) {
+  return <Grid {...restProps}>{children}</Grid>;
+}
+
 
