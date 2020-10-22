@@ -1,7 +1,10 @@
 import styled from 'styled-components/macro';
+import { animated } from 'react-spring';
 // import { respondBelow } from '../../../helpers/breakPoints';
 
-export const Container = styled.img`
+export const Container = styled(animated.img)`
   max-width: 250px;
   width: 100%;
+  border-radius: 50%;
+  box-shadow: 0px 10px 30px -5px rgba(${props => props.theme.colorsRGB.secondary},.5);
 `;

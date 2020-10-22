@@ -20,9 +20,10 @@ export default {
   },
   // Colors RGB
   colorsRGB: {
-      primary: '138,86,187',
-      secondary: '255,108,135',
+      primary: '239,147,148',
+      secondary: '247,200,120',
       white: '255,255,255',
+      black: '000,000,000',
       rose: '255,177,200',
   }
 }
