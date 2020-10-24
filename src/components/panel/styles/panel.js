@@ -2,6 +2,10 @@ import styled from 'styled-components/macro';
 // import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled.div`
+  position: relative;
+`;
+
+export const Content = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 200px 50px;

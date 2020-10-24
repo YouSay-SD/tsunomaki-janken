@@ -1,8 +1,8 @@
 import React from 'react';
 import { Video } from '../components';
 
-export function VideoContainer() {
+export function VideoContainer({url}) {
   return (
-    <Video loop autoPlay muted src='/videos/video.mp4' type="video/mp4" />
+    <Video loop autoPlay muted src={url} type="video/mp4" />
   )
 }
