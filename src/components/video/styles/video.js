@@ -1,11 +1,11 @@
+import { animated } from 'react-spring';
 import styled from 'styled-components/macro';
 // import { respondBelow } from '../../../helpers/breakPoints';
 
-export const Container = styled.video`
+export const Container = styled(animated.video)`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
   object-position: center;
   vertical-align: top;
-  filter: blur(15px);
 `;
