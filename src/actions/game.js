@@ -5,22 +5,24 @@ export const gameStart = () => ({
   payload: true,
 })
 
-export const pick = ( tokenName ) => ({
+export const setPick = (tokenName) => ({
   type: types.gamePick,
   payload: tokenName
 })
 
-export const housePick = ( houseSelectionPick ) => ({
+export const setHousePick = (houseSelectionPick) => ({
   type: types.gameHousePick,
   payload: houseSelectionPick
 })
 
-// export const housePick = ( u ) => {
-//   return {
-//     type: types.housePick,
-//     payload: {
-//       uid,
-//       displayName,
-//     }
-//   }
-// } 
+export const gameWin = () => ({
+  type: types.gameWin,
+})
+
+export const gameLose = () => ({
+  type: types.gameLose,
+})
+
+export const gameDraw = () => ({
+  type: types.gameDraw,
+})
