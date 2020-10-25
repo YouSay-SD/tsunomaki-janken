@@ -4,14 +4,14 @@ import { Panel } from '../components';
 import { TokenContainer } from './token';
 import tokens from '../fixtures/tokens.json';
 import { VideoContainer } from './video';
-import { gameStart, setHousePick, setPick } from '../actions/game';
+import { setGameInProgress, setHousePick, setPick } from '../actions/game';
 import { gameResult } from '../helpers/gameResult';
 
 export function PanelContainer() {
   const title = [...'Make Your Choice'];
 
   const dispatch = useDispatch();
-  const { pick, housePick } = useSelector(state => state.game);
+  const { gameStart, pick, housePick } = useSelector(state => state.game);
 
   const houseSelection = () => {
     const houseSelectionPick = [...tokens][Math.floor(Math.random() * [...tokens].length)].name;
@@ -21,7 +21,10 @@ export function PanelContainer() {
   const handleChoice = (tokenName) => {
     houseSelection();
     dispatch(setPick(tokenName));
-    dispatch(gameStart());
+    dispatch(setGameInProgress(true));
+    setTimeout(() => {
+      dispatch(setGameInProgress(false));
+    }, 18000);
   }
 
   useEffect(() => {
@@ -30,12 +33,12 @@ export function PanelContainer() {
 
   return (
     <Panel>
-      <VideoContainer url={`/videos/${(housePick) ? housePick : 'default'}.mp4`} />
+      <VideoContainer url={`/videos/${(housePick) ? housePick : 'default'}.mp4`}/>
 
-      <Panel.Content>
+      <Panel.Content style={{opacity: (gameStart) ? '0' : '1'}}>
         <Panel.Title>
           {title.map((letter, i) => (
-            <span key={i}>{ letter }</span>
+            <span key={i}>{letter}</span>
           ))}
         </Panel.Title>
 

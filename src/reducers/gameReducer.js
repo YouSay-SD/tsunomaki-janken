@@ -1,7 +1,7 @@
 import { types } from "../types/types";
 
 const initialState = {
-  gameStart: false,
+  gameInProgress: false,
   pick: '',
   housePick: '',
   win: 0,
@@ -11,10 +11,10 @@ const initialState = {
 
 export const gameReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.gameStart:
+    case types.gameInProgress:
       return {
         ...state,
-        gameStart: action.payload
+        gameInProgress: action.payload
       }
 
     case types.gamePick:

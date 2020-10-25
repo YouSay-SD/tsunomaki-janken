@@ -1,5 +1,5 @@
 export const types = {
-  gameStart: '[Game] Game Start',
+  gameInProgress: '[Game] Game In Progress',
   gamePick: '[Game] Pick',
   gameHousePick: '[Game] House Pick',
   gameWin: '[Game] Game Win',

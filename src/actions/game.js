@@ -1,8 +1,8 @@
 import { types } from "../types/types";
 
-export const gameStart = () => ({
-  type: types.gameStart,
-  payload: true,
+export const setGameInProgress = (status) => ({
+  type: types.gameInProgress,
+  payload: status
 })
 
 export const setPick = (tokenName) => ({
