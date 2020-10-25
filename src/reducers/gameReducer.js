@@ -4,7 +4,9 @@ const initialState = {
   gameStart: false,
   pick: '',
   housePick: '',
-  // active: null
+  win: 0,
+  lose: 0,
+  draw: 0,
 }
 
 export const gameReducer = (state = initialState, action) => {
@@ -26,7 +28,25 @@ export const gameReducer = (state = initialState, action) => {
         ...state,
         housePick: action.payload
       }
-  
+
+    case types.gameWin:
+      return {
+        ...state,
+        win: state.win + 1
+      }
+
+    case types.gameLose:
+      return {
+        ...state,
+        lose: state.lose + 1
+      }
+
+    case types.gameDraw:
+      return {
+        ...state,
+        draw: state.draw + 1
+      }
+
     default:
       return state;
   }
