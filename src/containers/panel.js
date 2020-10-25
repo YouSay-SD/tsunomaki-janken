@@ -6,12 +6,18 @@ import tokens from '../fixtures/tokens.json';
 import { VideoContainer } from './video';
 import { setGameInProgress, setHousePick, setPick } from '../actions/game';
 import { gameResult } from '../helpers/gameResult';
+import { useSpring } from 'react-spring';
 
 export function PanelContainer() {
   const title = [...'Make Your Choice'];
 
   const dispatch = useDispatch();
-  const { gameStart, pick, housePick } = useSelector(state => state.game);
+  const { gameInProgress, pick, housePick } = useSelector(state => state.game);
+
+  const fade = useSpring({
+    opacity: gameInProgress ? 0 : 1,
+    transform: gameInProgress ? 'translateY(-100vh)' : 'translateY(0px)'
+  });
 
   const houseSelection = () => {
     const houseSelectionPick = [...tokens][Math.floor(Math.random() * [...tokens].length)].name;
@@ -33,9 +39,9 @@ export function PanelContainer() {
 
   return (
     <Panel>
-      <VideoContainer url={`/videos/${(housePick) ? housePick : 'default'}.mp4`}/>
+      <VideoContainer url={`/videos/${(housePick) ? housePick : 'default'}.mp4`} />
 
-      <Panel.Content style={{opacity: (gameStart) ? '0' : '1'}}>
+      <Panel.Content style={fade}>
         <Panel.Title>
           {title.map((letter, i) => (
             <span key={i}>{letter}</span>
