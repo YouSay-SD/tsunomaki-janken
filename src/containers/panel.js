@@ -12,7 +12,7 @@ export function PanelContainer() {
   const title = [...'Make Your Choice'];
 
   const dispatch = useDispatch();
-  const { gameInProgress, pick, housePick } = useSelector(state => state.game);
+  const { win, lose, draw, gameInProgress, pick, housePick } = useSelector(state => state.game);
 
   const fade = useSpring({
     opacity: gameInProgress ? 0 : 1,
@@ -30,6 +30,7 @@ export function PanelContainer() {
     dispatch(setGameInProgress(true));
     setTimeout(() => {
       dispatch(setGameInProgress(false));
+      dispatch(setHousePick(''));
     }, 18000);
   }
 
@@ -42,6 +43,7 @@ export function PanelContainer() {
       <VideoContainer url={`/videos/${(housePick) ? housePick : 'default'}.mp4`} />
 
       <Panel.Content style={fade}>
+        <h2>Win: {win}, Lose: {lose}, Draw: {draw}</h2>
         <Panel.Title>
           {title.map((letter, i) => (
             <span key={i}>{letter}</span>
