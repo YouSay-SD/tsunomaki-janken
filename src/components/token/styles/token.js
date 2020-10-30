@@ -1,6 +1,5 @@
 import styled from 'styled-components/macro';
 import { animated } from 'react-spring';
-// import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled(animated.img)`
   max-width: 250px;
