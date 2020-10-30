@@ -9,13 +9,11 @@ import { store } from './store/store';
 
 export const TsunomakiJankenApp = () => {
   return (
-    <Provider store={store}>
+    <Provider store={ store }>
       <ThemeProvider theme={ theme }>
         <ThemeProvider theme={ fonts }>
-        
           <GlobalStyle />
           <AppRouter />
-
         </ThemeProvider>
       </ThemeProvider>
     </Provider>
