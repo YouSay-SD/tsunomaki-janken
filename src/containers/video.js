@@ -6,11 +6,12 @@ import { Video } from '../components';
 export function VideoContainer({url}) {
   const { gameInProgress } = useSelector(state => state.game);
 
-  const fade = useSpring({
+  // Blur
+  const blur = useSpring({
     filter: gameInProgress ? 'blur(0px)' : 'blur(15px)'
   });
 
   return (
-    <Video loop autoPlay muted src={url} type="video/mp4" style={fade} />
+    <Video loop autoPlay muted src={url} type="video/mp4" style={blur} />
   )
 }

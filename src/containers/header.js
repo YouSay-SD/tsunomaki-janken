@@ -7,10 +7,12 @@ const HeaderStyled = styled.header`
   grid-template-columns: 650px 1fr;
   height: 100vh;
 
+  /* Tablet */
   ${respondBelow.md`
     grid-template-columns: 1fr 1fr;
   `}
 
+  /* Mobile */
   ${respondBelow.sm`
     grid-template-columns: 1fr;
   `}

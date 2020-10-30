@@ -23,10 +23,12 @@ export const Container = styled.div`
     z-index: 1;
   }
 
+  /* Tablet */
   ${respondBelow.md`
     padding: 20px;
   `}
 
+  /* Mobile */
   ${respondBelow.sm`
     background-color: ${props => props.theme.colors.white};
     &:after {
