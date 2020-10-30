@@ -57,6 +57,7 @@ export const Navbar = styled.nav`
       transform: scale(1.2);
     }
 
+    /* Tablet */
     ${respondBelow.md`
       font-size: 2em;
     `}

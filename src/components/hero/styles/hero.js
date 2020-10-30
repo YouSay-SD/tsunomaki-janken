@@ -6,6 +6,7 @@ export const Container = styled.div`
   position: relative;
   overflow: hidden;
 
+  /* Mobile */
   ${respondBelow.sm`
     display: none;
   `}
