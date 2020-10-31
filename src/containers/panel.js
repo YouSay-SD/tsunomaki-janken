@@ -7,6 +7,7 @@ import { VideoContainer } from './video';
 import { setGameInProgress, setHousePick, setPick } from '../actions/game';
 import { gameResult } from '../helpers/gameResult';
 import { useSpring } from 'react-spring';
+import { ScoreContainer } from './score';
 
 export function PanelContainer() {
   const title = [...'Make Your Choice'];
@@ -14,7 +15,7 @@ export function PanelContainer() {
   const dispatch = useDispatch();
   const { win, lose, draw, gameInProgress, pick, housePick } = useSelector(state => state.game);
 
-  const fade = useSpring({
+  const fadeIn = useSpring({
     opacity: gameInProgress ? 0 : 1,
     transform: gameInProgress ? 'translateY(-100vh)' : 'translateY(0px)'
   });
@@ -42,8 +43,8 @@ export function PanelContainer() {
     <Panel>
       <VideoContainer url={`/videos/${(housePick) ? housePick : 'default'}.mp4`} />
 
-      <Panel.Content style={fade}>
-        <h2>Win: {win}, Lose: {lose}, Draw: {draw}</h2>
+      <Panel.Content style={fadeIn}>
+        {!gameInProgress && <ScoreContainer/>}
         <Panel.Title>
           {title.map((letter, i) => (
             <span key={i}>{letter}</span>

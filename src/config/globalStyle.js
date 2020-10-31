@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     a,
+    p,
     h1,
     h2,
     h3,

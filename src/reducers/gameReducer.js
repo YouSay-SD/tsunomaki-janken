@@ -1,12 +1,15 @@
+import { ScoreContainer } from "../containers/score";
 import { types } from "../types/types";
 
 const initialState = {
   gameInProgress: false,
   pick: '',
   housePick: '',
-  win: 0,
-  lose: 0,
-  draw: 0,
+  score: {
+    win: 0,
+    lose: 0,
+    draw: 0,
+  }
 }
 
 export const gameReducer = (state = initialState, action) => {
@@ -32,19 +35,19 @@ export const gameReducer = (state = initialState, action) => {
     case types.gameWin:
       return {
         ...state,
-        win: state.win + 1
+        score: { ...state.score, win: state.score.win + 1 }
       }
 
     case types.gameLose:
       return {
         ...state,
-        lose: state.lose + 1
+        score: { ...state.score, lose: state.score.lose + 1 }
       }
 
     case types.gameDraw:
       return {
         ...state,
-        draw: state.draw + 1
+        score: { ...state.score, draw: state.score.draw + 1 }
       }
 
     default:
