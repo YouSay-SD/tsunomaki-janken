@@ -1,5 +1,6 @@
 import { animated } from 'react-spring';
 import styled from 'styled-components/macro';
+import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled.div`
   position: relative;
@@ -39,4 +40,8 @@ export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
+
+  ${respondBelow.sm`
+    grid-template-columns: 1fr;
+  `}
 `;

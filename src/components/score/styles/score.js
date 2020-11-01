@@ -23,7 +23,7 @@ export const Box = styled.div`
     color: ${props => props.theme.colors.primary};
     border-bottom: 3px solid ${props => props.theme.colors.primary};
 
-    ${respondBelow.md`
+    ${respondBelow.sm`
       font-size: 25px;
     `}
   }
@@ -33,7 +33,7 @@ export const Box = styled.div`
     color: ${props => props.theme.colors.secondary};
     font-weight: 600;
 
-    ${respondBelow.md`
+    ${respondBelow.sm`
       font-size: 25px;
     `}
   }
