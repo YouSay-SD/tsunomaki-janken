@@ -13,7 +13,7 @@ export function PanelContainer() {
   const title = [...'Make Your Choice'];
 
   const dispatch = useDispatch();
-  const { win, lose, draw, gameInProgress, pick, housePick } = useSelector(state => state.game);
+  const { gameInProgress, pick, housePick } = useSelector(state => state.game);
 
   const fadeIn = useSpring({
     opacity: gameInProgress ? 0 : 1,

@@ -19,11 +19,19 @@ export const Content = styled(animated.div)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  ${respondBelow.sm`
+    padding: 150px 50px 0;
+  `}
 `;
 
 export const Title = styled.h2`
   font-size: 3em;
   margin-bottom: 50px;
+
+  ${respondBelow.sm`
+    font-size: 1.6em;
+  `}
 
   span {
     &:nth-child(odd) {
@@ -42,6 +50,7 @@ export const Grid = styled.div`
   gap: 50px;
 
   ${respondBelow.sm`
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
   `}
 `;

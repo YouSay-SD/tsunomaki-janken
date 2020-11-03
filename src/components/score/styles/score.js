@@ -24,7 +24,7 @@ export const Box = styled.div`
     border-bottom: 3px solid ${props => props.theme.colors.primary};
 
     ${respondBelow.sm`
-      font-size: 25px;
+      font-size: 22px;
     `}
   }
 

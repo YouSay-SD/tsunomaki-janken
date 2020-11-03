@@ -1,4 +1,3 @@
-import { ScoreContainer } from "../containers/score";
 import { types } from "../types/types";
 
 const initialState = {
