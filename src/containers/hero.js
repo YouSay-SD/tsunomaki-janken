@@ -9,7 +9,7 @@ export function HeroContainer() {
   const increment = () => setIndex(index => (index + 1) % backgrounds.length)
   useInterval(increment, (document.hasFocus()) ? 3000 : null);
   
-  // Backgrounds Transition
+  // Backgrounds Transitions
   const transitions = useTransition(backgrounds[index], item => item.id, {
     from: {opacity: 0, transform: 'translateX(300px) scale(1.1)'},
     enter: {opacity: 1, transform: 'translateX(0px) scale(1)'},
