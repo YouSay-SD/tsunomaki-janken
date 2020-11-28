@@ -5,7 +5,7 @@ import { animated, useSprings } from 'react-spring';
 
 
 export function MenuContainer() {
-  const text = [...'Start Game!']
+  const text = [...'Start Game!'];
 
   const base = {
     config: { mass: 5, tension: 2000, friction: 200 },
