@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Content } from './styles/board';
+import { Container, Content, Grid } from './styles/board';
 
 export default function Board({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -7,4 +7,8 @@ export default function Board({ children, ...restProps }) {
 
 Board.Content = function BoardContent({ children, ...restProps }) {
   return <Content {...restProps}>{children}</Content>;
+}
+
+Board.Grid = function BoardGrid({ children, ...restProps }) {
+  return <Grid {...restProps}>{children}</Grid>;
 }

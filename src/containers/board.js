@@ -7,12 +7,14 @@ export function BoardContainer() {
   return (
     <Board>
       <Board.Content>
-        <CardContainer />
-        <CardContainer />
-        <CardContainer />
-        <CardContainer />
-        <CardContainer />
-        <CardContainer />
+        <Board.Grid>
+          <CardContainer />
+          <CardContainer />
+          <CardContainer />
+          <CardContainer />
+          <CardContainer />
+          <CardContainer />
+        </Board.Grid>
       </Board.Content>
     </Board> 
   )

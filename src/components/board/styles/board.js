@@ -16,3 +16,9 @@ export const Content = styled.div`
     padding: 0 30px;
   `}
 `;
+
+export const Grid = styled.div`
+
+
+`;
+
