@@ -2,6 +2,8 @@ import styled from 'styled-components/macro';
 import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled.div`
+  border: 1px solid black;
+  width: 410px;
   display: flex;
   flex-direction: column;
   align-items: center;

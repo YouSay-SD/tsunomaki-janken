@@ -18,7 +18,7 @@ export const Content = styled.div`
 `;
 
 export const Grid = styled.div`
-
+  margin: 0 auto;
 
 `;
 

@@ -10,5 +10,5 @@ Board.Content = function BoardContent({ children, ...restProps }) {
 }
 
 Board.Grid = function BoardGrid({ children, ...restProps }) {
-  return <Grid {...restProps}>{children}</Grid>;
+  return <Grid className="js-masonry-grid" {...restProps}>{children}</Grid>;
 }
