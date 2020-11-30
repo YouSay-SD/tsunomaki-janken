@@ -7,10 +7,11 @@ window.onload = () => {
   const grid = document.querySelector('.js-masonry-grid');
 
   const masonry = new Masonry(grid, {
-    itemSelector: '.js-masonry-item',
-    columnWidth: 410,
+    itemSelector: '.js-masonry-card',
+    columnWidth: '.js-masonry-card',
     horizontalOrder: true,
-    isFitWidth: true
+    isFitWidth: true,
+    gutter: 20
   });
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Picture, Name, Message, Score } from './styles/card';
 
 export default function Card({ children, ...restProps }) {
-  return <Container className="js-masonry-item" {...restProps}>{children}</Container>;
+  return <Container className="js-masonry-card" {...restProps}>{children}</Container>;
 }
 
 Card.Picture = function CardPicture({ src, ...restProps }) {

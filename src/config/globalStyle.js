@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
     a,
     p,
+    span,
     h1,
     h2,
     h3,
