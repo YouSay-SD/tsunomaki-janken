@@ -3,7 +3,7 @@ import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled.div`
   /* border: 3px solid ${props => props.theme.colors.secondary}; */
-  background-color: rgba(${props => props.theme.colorsRGB.secondary}, .1);
+  background-color: rgba(${props => props.theme.colorsRGB.white}, .4);
   width: 390px;
   display: flex;
   flex-direction: column;

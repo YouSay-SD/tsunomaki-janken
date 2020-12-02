@@ -13,9 +13,9 @@ export const Routes = () => {
 
   const location = useLocation();
   const transitions = useTransition(location, location => location.pathname, {
-    from: {opacity: 0},
-    enter: {opacity: 1},
-    leave: {opacity: 0},
+    from: {opacity: 0, transform: 'translateX(500px)'},
+    enter: {opacity: 1, transform: 'translateX(0px)'},
+    leave: {opacity: 0, transform: 'translateX(500px)'},
   });
 
   return (
