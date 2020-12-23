@@ -20,8 +20,9 @@ const GlobalStyle = createGlobalStyle`
     h4,
     h5,
     h6 {
-        font-family: 'Fredoka One', cursive;
-        font-weight: 300;
+        /* font-family: 'Fredoka One', cursive; */
+        font-family: 'Nunito Sans', cursive, Arial, sans-serif;
+        font-weight: 600;
     }
 
     a {

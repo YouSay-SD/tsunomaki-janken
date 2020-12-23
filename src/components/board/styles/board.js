@@ -3,7 +3,7 @@ import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled.div`
   background-image: url('/images/backgrounds/bg.jpg');
-  background-size: 100% 100%;
+  background-size: 100%;
 
   /* Mobile */
   ${respondBelow.md`

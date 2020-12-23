@@ -3,7 +3,7 @@ import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled.div`
   /* border: 3px solid ${props => props.theme.colors.secondary}; */
-  background-color: rgba(${props => props.theme.colorsRGB.white}, .4);
+  background-color: rgba(${props => props.theme.colorsRGB.white}, .6);
   width: 390px;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,10 @@ export const Picture = styled.img`
   transform: translateX(-50%);
 `;
 
-export const Name = styled.span``;
+export const Name = styled.span`
+  font-size: 20px;
+  margin-bottom: 15px;
+`;
 
 export const Message = styled.p`
   font-size: 15px;
