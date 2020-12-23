@@ -2,7 +2,6 @@ import styled from 'styled-components/macro';
 import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled.div`
-  /* border: 3px solid ${props => props.theme.colors.secondary}; */
   background-color: rgba(${props => props.theme.colorsRGB.white}, .6);
   width: 390px;
   display: flex;
@@ -25,8 +24,8 @@ export const Container = styled.div`
 
 export const Picture = styled.img`
   border: 3px solid ${props => props.theme.colors.secondary};
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
@@ -39,24 +38,51 @@ export const Picture = styled.img`
 export const Name = styled.span`
   font-size: 20px;
   margin-bottom: 15px;
+  z-index: 1;
+  background-color: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.white};
+  padding: 7px 22px;
+  border-radius: 30px;
 `;
 
 export const Message = styled.p`
   font-size: 15px;
   line-height: 23px;
-  margin-bottom: 25px;
+  padding-bottom: 15px;
+  color: ${props => props.theme.colors.terciary};
 `;
 
 export const Score = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  padding-top: 15px;
+  border-top: 1px solid ${props => props.theme.colors.terciary};
 
   span {
     display: block;
-    margin-bottom: 10px;
-    /* color: ${props => props.theme.colors.secondary}; */
+    margin-bottom: 13px;
+    font-weight: 700;
+    background-color: ${props => props.theme.colors.secondary};
+    padding: 5px 8px;
+    color: ${props => props.theme.colors.white};
   }
 
+  p {
+    font-size: 20px;
+    color: ${props => props.theme.colors.terciary};
+  }
+
+  div {
+    &:first-child {
+      span {
+        border-radius: 8px 0 0 8px;
+      }
+    }
+
+    &:last-child {
+      span {
+        border-radius: 0 8px 8px 0;
+      }
+    }
+  }
 `;
-//     background-color: ${props => props.theme.colors.white};

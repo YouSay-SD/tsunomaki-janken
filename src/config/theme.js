@@ -22,6 +22,7 @@ export default {
   colorsRGB: {
       primary: '239,147,148',
       secondary: '247,200,120',
+      terciary: '164,133,113',
       white: '255,255,255',
       black: '000,000,000',
       rose: '255,177,200',

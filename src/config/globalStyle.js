@@ -5,6 +5,11 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+
+        &::selection {
+            background: #F7C878;
+            color: white;
+        }
     }
 
     img {
