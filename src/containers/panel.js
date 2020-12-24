@@ -61,6 +61,7 @@ export function PanelContainer() {
             />
           ))}
         </Panel.Grid>
+        <Panel.Button>Share Result & leave a message</Panel.Button>
       </Panel.Content>
     </Panel>
   )

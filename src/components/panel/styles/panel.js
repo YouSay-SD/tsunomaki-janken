@@ -48,9 +48,30 @@ export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
+  margin-bottom: 100px;
 
   ${respondBelow.sm`
     grid-template-columns: 1fr 1fr;
     gap: 25px;
+    margin-bottom: 50px;
+  `}
+`;
+
+export const Button = styled.a`
+  padding: 8px 20px;
+  font-size: 22px;
+  border-radius: 14px;
+  cursor: pointer;
+  background-color: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.white};
+  box-shadow: 0px 10px 30px -5px rgba(${props => props.theme.colorsRGB.secondary},.5);
+  transition: transform .5s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  ${respondBelow.sm`
+    font-size: 16px;
   `}
 `;
