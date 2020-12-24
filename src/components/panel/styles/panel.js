@@ -26,7 +26,7 @@ export const Content = styled(animated.div)`
 `;
 
 export const Title = styled.h2`
-  font-size: 3em;
+  font-size: 35px;
   margin-bottom: 50px;
 
   ${respondBelow.sm`
@@ -64,11 +64,12 @@ export const Button = styled.a`
   cursor: pointer;
   background-color: ${props => props.theme.colors.secondary};
   color: ${props => props.theme.colors.white};
-  box-shadow: 0px 10px 30px -5px rgba(${props => props.theme.colorsRGB.secondary},.5);
-  transition: transform .5s ease;
+  box-shadow: 0px 5px 5px -5px rgba(${props => props.theme.colorsRGB.secondary},.5);
+  transition: all .5s ease;
 
   &:hover {
     transform: scale(1.1);
+    box-shadow: 0px 10px 30px -5px rgba(${props => props.theme.colorsRGB.secondary},.5);
   }
 
   ${respondBelow.sm`

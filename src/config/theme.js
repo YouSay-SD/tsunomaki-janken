@@ -26,5 +26,10 @@ export default {
       white: '255,255,255',
       black: '000,000,000',
       rose: '255,177,200',
-  }
+  },
+  // Font Family
+  fontFamily: {
+    primary: 'Rammetto One, cursive',
+    secondary: 'Comic Neue',
+  },
 }
