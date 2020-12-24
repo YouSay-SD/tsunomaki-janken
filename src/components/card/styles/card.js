@@ -9,7 +9,7 @@ export const Container = styled.div`
   align-items: center;
   text-align: center;
   padding: 65px 35px 35px;
-  margin-top: 70px;
+  margin-top: 80px;
   border-radius: 20px;
 
   /* Mobile */
