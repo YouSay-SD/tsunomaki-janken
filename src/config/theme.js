@@ -29,7 +29,8 @@ export default {
   },
   // Font Family
   fontFamily: {
-    primary: 'Rammetto One, cursive',
-    secondary: 'Comic Neue',
+    primary: 'Nunito Sans, cursive, Arial, sans-serif',
+    secondary: 'Comic Neue, cursive, Arial, sans-serif',
+    terciary: 'Fredoka One, cursive, Arial, sans-serif',
   },
 }

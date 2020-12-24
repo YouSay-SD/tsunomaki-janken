@@ -8,6 +8,7 @@ import { setGameInProgress, setHousePick, setPick } from '../actions/game';
 import { gameResult } from '../helpers/gameResult';
 import { useSpring } from 'react-spring';
 import { ScoreContainer } from './score';
+import { ModalContainer } from './modal';
 
 export function PanelContainer() {
   const title = [...'Make Your Choice'];
@@ -61,7 +62,8 @@ export function PanelContainer() {
             />
           ))}
         </Panel.Grid>
-        <Panel.Button>Share Result & leave a message</Panel.Button>
+        <ModalContainer />
+        {/* <Panel.Button>Share Result & leave a message</Panel.Button> */}
       </Panel.Content>
     </Panel>
   )

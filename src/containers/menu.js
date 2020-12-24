@@ -3,7 +3,6 @@ import { Menu } from '../components';
 import { NavLink } from 'react-router-dom';
 import { animated, useSprings } from 'react-spring';
 
-
 export function MenuContainer() {
   const text = [...'Start Game!'];
 

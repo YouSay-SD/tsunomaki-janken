@@ -26,14 +26,16 @@ export const Content = styled(animated.div)`
 `;
 
 export const Title = styled.h2`
-  font-size: 35px;
-  margin-bottom: 50px;
+  font-size: 40px;
 
   ${respondBelow.sm`
     font-size: 1.6em;
   `}
 
   span {
+    font-family: ${props => props.theme.fontFamily.secondary};
+    font-weight: 700;
+
     &:nth-child(odd) {
       color: ${ props => props.theme.colors.primary };
     }
@@ -48,12 +50,11 @@ export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
-  margin-bottom: 100px;
+  padding: 50px 0;
 
   ${respondBelow.sm`
     grid-template-columns: 1fr 1fr;
     gap: 25px;
-    margin-bottom: 50px;
   `}
 `;
 
