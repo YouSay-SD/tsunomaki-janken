@@ -6,7 +6,7 @@ import Masonry from 'masonry-layout';
 window.onload = () => {
   const grid = document.querySelector('.js-masonry-grid');
 
-  const masonry = new Masonry(grid, {
+  new Masonry(grid, {
     itemSelector: '.js-masonry-card',
     columnWidth: '.js-masonry-card',
     horizontalOrder: true,
