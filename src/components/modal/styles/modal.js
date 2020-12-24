@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { animated } from 'react-spring';
 import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled.div`
@@ -16,6 +17,7 @@ export const Button = styled.button`
   box-shadow: 0px 5px 5px -5px rgba(${props => props.theme.colorsRGB.secondary},.5);
   transition: all .5s ease;
   border: none;
+  outline: none;
 
   &:hover {
     transform: scale(1.1);
@@ -27,7 +29,7 @@ export const Button = styled.button`
   `}
 `;
 
-export const Box = styled.div`
+export const Box = styled(animated.div)`
   background-color: ${props => props.theme.colors.white};
   color: ${props => props.theme.colors.terciary};
   border-radius: 25px;
@@ -39,7 +41,7 @@ export const Box = styled.div`
   z-index: 2;
 `;
 
-export const Background = styled.div`
+export const Background = styled(animated.div)`
   position: absolute;
   top: 0;
   left: 0;
