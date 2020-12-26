@@ -1,35 +1,13 @@
 import styled from 'styled-components/macro';
 import { animated } from 'react-spring';
-import { respondBelow } from '../../../helpers/breakPoints';
+// import { respondBelow } from '../../../helpers/breakPoints';
 
 export const Container = styled.div`
   /* position: relative;
   overflow: hidden; */
 `;
 
-export const Button = styled.button`
-  padding: 10px 20px;
-  font-size: 22px;
-  border-radius: 14px;
-  cursor: pointer;
-  background-color: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.white};
-  box-shadow: 0px 5px 5px -5px rgba(${props => props.theme.colorsRGB.secondary},.5);
-  transition: all .5s ease;
-  border: none;
-  outline: none;
-
-  &:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 10px 30px -5px rgba(${props => props.theme.colorsRGB.secondary},.5);
-  }
-
-  ${respondBelow.sm`
-    font-size: 16px;
-  `}
-`;
-
-export const Box = styled(animated.div)`
+export const Form = styled(animated.form)`
   background-color: ${props => props.theme.colors.white};
   color: ${props => props.theme.colors.terciary};
   border-radius: 25px;
@@ -39,6 +17,11 @@ export const Box = styled(animated.div)`
   right: 50%;
   transform: translate(50%, -50%);
   z-index: 2;
+  max-width: 550px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 export const Background = styled(animated.div)`
@@ -52,5 +35,27 @@ export const Background = styled(animated.div)`
 `;
 
 export const Title = styled.h3`
+  margin-bottom: 25px;
+`;
 
+export const Message = styled.textarea`
+  font-size: 20px;
+  color: ${props => props.theme.colors.terciary};
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 250px;
+  max-height: 500px;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+
+  &:focus {
+    outline: none;
+    border: 1px solid ${props => props.theme.colors.secondary};
+  }
+
+  &::placeholder {
+    color: ${props => props.theme.colors.terciary};
+    opacity: .5;
+  }
 `;

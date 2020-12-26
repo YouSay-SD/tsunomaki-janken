@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
-    button, input[type="submit"] {
+    button {
         padding: 10px 20px;
         font-size: 22px;
         border-radius: 14px;
