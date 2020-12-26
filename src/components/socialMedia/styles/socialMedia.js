@@ -4,7 +4,6 @@ import { respondBelow } from '../../../helpers/breakPoints';
 export const Container = styled.div`
   display: grid;
   gap: 10px;
-  flex-wrap: wrap;
   background-color: ${props => props.theme.colors.white};
   padding: 20px;
   border-radius: 30px 0 0 30px;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { BoardContainer } from '../containers/board';
 import { HeaderContainer } from '../containers/header';
 import { HeroContainer } from '../containers/hero';
 import { MenuContainer } from '../containers/menu';
@@ -14,8 +13,6 @@ export default function Home() {
       </HeaderContainer>
 
       <SocialMediaContainer />
-      
-      <BoardContainer />
     </>
   )
 }
