@@ -3,6 +3,8 @@ import { BoardContainer } from '../containers/board';
 
 export default function MessageBoard() {
   return (
-    <BoardContainer />
+    <>
+      <BoardContainer />
+    </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderContainer } from '../containers/header';
-import { HeroContainer } from '../containers/hero';
+import { ImageSlideContainer } from '../containers/image-slide';
 import { MenuContainer } from '../containers/menu';
 import { SocialMediaContainer } from '../containers/socialMedia';
 
@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <HeaderContainer>
         <MenuContainer />
-        <HeroContainer />
+        <ImageSlideContainer />
       </HeaderContainer>
 
       <SocialMediaContainer />

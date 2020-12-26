@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Hero } from '../components';
+import { ImageSlide } from '../components';
 import { useTransition } from 'react-spring';
 import backgrounds from '../fixtures/backgrounds.json';
 import useInterval from 'react-useinterval';
 
-export function HeroContainer() {
+export function ImageSlideContainer() {
   const [index, setIndex] = useState(0);
   const increment = () => setIndex(index => (index + 1) % backgrounds.length)
   useInterval(increment, (document.hasFocus()) ? 3000 : null);
@@ -17,10 +17,10 @@ export function HeroContainer() {
   });
 
   return (
-    <Hero>
+    <ImageSlide>
       {
         transitions.map(({item, props, key}) => (
-          <Hero.Background
+          <ImageSlide.Background
             key={key}
             style={{ 
               backgroundImage: `url(${item.url})`,
@@ -29,6 +29,6 @@ export function HeroContainer() {
           />
         ))
       }
-    </Hero>    
+    </ImageSlide>    
   )
 }
