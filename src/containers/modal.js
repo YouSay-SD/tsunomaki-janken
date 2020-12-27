@@ -7,7 +7,7 @@ export const ModalContainer = () => {
   const [ openModal, setOpenModal ] = useState(false);
 
   const showHideModal = useSpring({
-    to: async (next, cancel) => {
+    to: async (next) => {
       if (openModal) {
         await next ({display: 'flex'})
         await next ({opacity: 1})
