@@ -17,7 +17,7 @@ export const ModalContainer = () => {
       }
     },
     from: {opacity: 0, display: 'none'},
-    config: {duration: 300}
+    config: {duration: 200}
   });
 
   return (
