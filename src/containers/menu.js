@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from '../components';
-import { NavLink } from 'react-router-dom';
 import { animated, useSprings } from 'react-spring';
+import { ModalContainer } from './modal';
 
 export function MenuContainer() {
   const text = [...'Start Game!'];
@@ -21,17 +21,17 @@ export function MenuContainer() {
       </Menu.Logo>
 
       <Menu.Navbar>
-        <NavLink 
-          activeClassName="active"
-          exact
-          to="/janken"
-        >
-          {springs.map((s, i) => (
-            <animated.span key={`char${i}`} style={s}>
-              {text[i] === ' ' ? <>&nbsp;</> : text[i]}
-            </animated.span>
-          ))}
-        </NavLink>
+        <ModalContainer 
+          button={
+            <div style={{cursor: 'pointer'}}>
+              {springs.map((s, i) => (
+                <animated.span key={`char${i}`} style={s}>
+                  {text[i] === ' ' ? <>&nbsp;</> : text[i]}
+                </animated.span>
+              ))}
+            </div>
+          } 
+        />
       </Menu.Navbar>
     </Menu>
   )

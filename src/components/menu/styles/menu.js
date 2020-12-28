@@ -46,27 +46,26 @@ export const Logo = styled.div`
 export const Navbar = styled.nav`
   text-align: center;
 
-  a {
-    font-size: 3em;
-    letter-spacing: 5px;
-    display: inline-block;
-    color: ${ props => props.theme.colors.primary };
-    transition: transform .5s ease;
-
-    &:hover {
-      transform: scale(1.2);
+  &:hover {
+    span {
+      transform: scale(1.1) !important;
     }
-
-    /* Tablet */
-    ${respondBelow.md`
-      font-size: 2em;
-    `}
   }
 
   span {
     display: inline-block;
     font-family: 'Fredoka One', cursive;
     -webkit-text-stroke: 1px ${ props => props.theme.colors.terciary };
+    font-size: 3em;
+    letter-spacing: 5px;
+    display: inline-block;
+    color: ${ props => props.theme.colors.primary };
+    transition: transform .1s ease;
+
+    /* Tablet */
+    ${respondBelow.md`
+      font-size: 2em;
+    `}
 
     &:nth-child(odd) {
       color: ${ props => props.theme.colors.primary };

@@ -62,8 +62,16 @@ export function PanelContainer() {
             />
           ))}
         </Panel.Grid>
-        <ModalContainer />
-        {/* <Panel.Button>Share Result & leave a message</Panel.Button> */}
+
+        <ModalContainer
+          button={<button>Share Result & leave a message</button>}
+        >
+          <form>
+            <h3>Leave your message here, it will be posted on the message board</h3>
+            <textarea placeholder="Your Message..." />
+            <button type="submit">Send</button>
+          </form>
+        </ModalContainer>
       </Panel.Content>
     </Panel>
   )

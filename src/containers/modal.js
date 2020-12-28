@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from '../components';
 import { useSpring } from 'react-spring';
 
-export const ModalContainer = () => {
+export const ModalContainer = ({children, button}) => {
 
   const [ openModal, setOpenModal ] = useState(false);
 
@@ -22,12 +22,12 @@ export const ModalContainer = () => {
 
   return (
     <Modal>
-      <button onClick={() => setOpenModal(!openModal)}>Share Result & leave a message</button>
-      <Modal.Form style={showHideModal}>
-        <Modal.Title>Leave your message here, it will be posted on the message board</Modal.Title>
-        <Modal.Message placeholder="Your Message..." />
-        <button type="submit">Send</button>
-      </Modal.Form>
+      <div onClick={() => setOpenModal(!openModal)}>
+        {button}
+      </div>
+      <Modal.Box style={showHideModal}>
+        {children}
+      </Modal.Box>
       <Modal.Background style={showHideModal} onClick={() => setOpenModal(!openModal)} />
     </Modal>
   )
