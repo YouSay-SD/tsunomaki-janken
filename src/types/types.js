@@ -1,4 +1,7 @@
 export const types = {
+  login: '[Auth] Login',
+  logout: '[Auth] Logout',
+
   gameInProgress: '[Game] Game In Progress',
   gamePick: '[Game] Pick',
   gameHousePick: '[Game] House Pick',
