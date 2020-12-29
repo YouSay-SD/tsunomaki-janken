@@ -2,8 +2,12 @@ import React from 'react';
 import { Menu } from '../components';
 import { animated, useSprings } from 'react-spring';
 import { ModalContainer } from './modal';
+import { useDispatch } from 'react-redux';
+import { startGoogleLogin } from '../actions/auth';
+import { startFacebookLogin } from '../actions/auth';
 
 export function MenuContainer() {
+  const dispatch = useDispatch();
   const text = [...'Start Game!'];
 
   const base = {
@@ -13,6 +17,14 @@ export function MenuContainer() {
   }
 
   const springs = useSprings(text.length, text.map((t, i) => ({ ...base, delay: 100 * i })))
+
+  const handleGoogleLogin = () => {
+    dispatch(startGoogleLogin());
+  }
+
+  const handleFacebookLogin = () => {
+    dispatch(startFacebookLogin());
+  }
 
   return (
     <Menu>
@@ -31,7 +43,10 @@ export function MenuContainer() {
               ))}
             </div>
           } 
-        />
+        >
+          <button onClick={handleGoogleLogin}>Login Google</button>
+          <button onClick={handleFacebookLogin}>Login Facebook</button>
+        </ModalContainer>
       </Menu.Navbar>
     </Menu>
   )
