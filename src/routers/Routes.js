@@ -5,7 +5,6 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import { animated, useTransition } from 'react-spring';
 import Home from '../pages/home';
 import Janken from '../pages/janken';
 import MessageBoard from '../pages/message-board';
@@ -13,24 +12,15 @@ import MessageBoard from '../pages/message-board';
 export const Routes = () => {
 
   const location = useLocation();
-  const transitions = useTransition(location, location => location.pathname, {
-    from: {opacity: 0, transform: 'translateX(500px)'},
-    enter: {opacity: 1, transform: 'translateX(0px)'},
-    leave: {opacity: 0, transform: 'translateX(500px)'},
-  });
 
   return (
     <>
-      {transitions.map(({item: location, props, key}) => (
-        <animated.div style={props} key={key}>
-          <Switch location={location}>
-            <Route exact path="/" component={ Home } />
-            <Route exact path="/janken" component={ Janken } />
-            <Route exact path="/message-board" component={ MessageBoard } />
-            <Redirect to="/" />
-          </Switch>
-        </animated.div>
-      ))}
+      <Switch location={location}>
+        <Route exact path="/" component={ Home } />
+        <Route exact path="/janken" component={ Janken } />
+        <Route exact path="/message-board" component={ MessageBoard } />
+        <Redirect to="/" />
+      </Switch>
     </>
   )
 }
