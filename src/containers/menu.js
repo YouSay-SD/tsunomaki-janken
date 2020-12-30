@@ -5,6 +5,7 @@ import { ModalContainer } from './modal';
 import { useDispatch } from 'react-redux';
 import { startGoogleLogin } from '../actions/auth';
 import { startFacebookLogin } from '../actions/auth';
+import { NavLink } from 'react-router-dom';
 
 export function MenuContainer() {
   const dispatch = useDispatch();
@@ -22,8 +23,9 @@ export function MenuContainer() {
     dispatch(startGoogleLogin());
   }
 
-  const handleFacebookLogin = () => {
-    dispatch(startFacebookLogin());
+  const handleFacebookLogin = async () => {
+    await dispatch(startFacebookLogin());
+    
   }
 
   return (
@@ -47,6 +49,14 @@ export function MenuContainer() {
           <button onClick={handleGoogleLogin}>Login Google</button>
           <button onClick={handleFacebookLogin}>Login Facebook</button>
         </ModalContainer>
+
+        <NavLink
+          activeClassName="active"
+          exact
+          to="/janken"
+        >
+          janken
+        </NavLink>
       </Menu.Navbar>
     </Menu>
   )

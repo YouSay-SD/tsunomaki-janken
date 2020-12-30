@@ -13,6 +13,11 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    body {
+        overflow: hidden;
+        position: relative;
+    }
+
     img {
         width: 100%;
     }
