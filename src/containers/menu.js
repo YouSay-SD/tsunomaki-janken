@@ -57,6 +57,14 @@ export function MenuContainer() {
         >
           janken
         </NavLink>
+
+        <NavLink
+          activeClassName="active"
+          exact
+          to="/message-board"
+        >
+          message board
+        </NavLink>
       </Menu.Navbar>
     </Menu>
   )
