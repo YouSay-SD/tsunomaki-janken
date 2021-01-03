@@ -8,7 +8,7 @@ import { gameReset, setGameInProgress, setHousePick, setPick } from '../actions/
 import { gameResult } from '../helpers/gameResult';
 import { useSpring } from 'react-spring';
 import { ScoreContainer } from './score';
-import { ModalContainer } from './modal';
+import { ShareScore } from './share-score';
 
 export function PanelContainer() {
   const title = [...'Make Your Choice'];
@@ -70,15 +70,7 @@ export function PanelContainer() {
           ))}
         </Panel.Grid>
 
-        <ModalContainer
-          button={<button>Share Result & leave a message</button>}
-        >
-          <form>
-            <h3>Leave your message here, it will be posted on the message board</h3>
-            <textarea placeholder="Your Message..." />
-            <button type="submit">Send</button>
-          </form>
-        </ModalContainer>
+        <ShareScore />
       </Panel.Content>
     </Panel>
   )
