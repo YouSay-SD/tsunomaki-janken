@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        position: relative;
+        /* position: relative; */
     }
 
     img {

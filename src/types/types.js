@@ -8,4 +8,5 @@ export const types = {
   gameWin: '[Game] Game Win',
   gameLose: '[Game] Game Lose',
   gameDraw: '[Game] Game Draw',
+  gameReset: '[Game] Game Reset',
 }

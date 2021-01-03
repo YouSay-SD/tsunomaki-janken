@@ -49,6 +49,11 @@ export const gameReducer = (state = initialState, action) => {
         score: { ...state.score, draw: state.score.draw + 1 }
       }
 
+    case types.gameReset:
+      return {
+        ...initialState
+      }
+
     default:
       return state;
   }

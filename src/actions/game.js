@@ -26,3 +26,7 @@ export const gameLose = () => ({
 export const gameDraw = () => ({
   type: types.gameDraw,
 })
+
+export const gameReset = () => ({
+  type: types.gameReset,
+})

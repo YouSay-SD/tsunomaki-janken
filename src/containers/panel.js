@@ -4,7 +4,7 @@ import { Panel } from '../components';
 import { TokenContainer } from './token';
 import tokens from '../fixtures/tokens.json';
 import { VideoContainer } from './video';
-import { setGameInProgress, setHousePick, setPick } from '../actions/game';
+import { gameReset, setGameInProgress, setHousePick, setPick } from '../actions/game';
 import { gameResult } from '../helpers/gameResult';
 import { useSpring } from 'react-spring';
 import { ScoreContainer } from './score';
@@ -38,7 +38,14 @@ export function PanelContainer() {
 
   useEffect(() => {
     gameResult(pick, housePick, dispatch);
-  }, [pick, housePick, dispatch])
+  }, [pick, housePick, dispatch]);
+
+  // Reset 
+  useEffect(() => {
+    return () => {
+      dispatch(gameReset());
+    }
+  }, [dispatch])
 
   return (
     <Panel>
