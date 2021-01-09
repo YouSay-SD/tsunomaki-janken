@@ -1,15 +1,22 @@
 import { types } from "../types/types";
 
-export const authReducer = (state = {}, action) => {
+const initialState = {
+  isLogged: false
+}
+
+export const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.login:
       return {
         uid: action.payload.uid,
-        name: action.payload.displayName
+        name: action.payload.displayName,
+        isLogged: true,
       }
 
     case types.logout:
-      return {}
+      return {
+        isLogged: false
+      }
 
     default:
       return state;

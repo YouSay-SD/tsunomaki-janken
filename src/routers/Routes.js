@@ -29,9 +29,9 @@ export const Routes = () => {
       {transitions.map(({item, props, key}) => (
         <animated.div style={props} key={key}>
           <Switch location={item}>
-            <Route exact path="/" component={ Home } />
             <Route exact path="/janken" component={ Janken } />
             <Route exact path="/message-board" component={ MessageBoard } />
+            <Route exact path="/" component={ Home } />
             <Redirect to="/" />
           </Switch>
         </animated.div>

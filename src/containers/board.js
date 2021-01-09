@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Board from '../components/board';
 import { CardContainer } from './card';
 import Masonry from 'masonry-layout';
+import { NavLink } from 'react-router-dom';
 
 export function BoardContainer() {
   
@@ -73,6 +74,13 @@ export function BoardContainer() {
     <Board>
       <Board.Content>
         <Board.Grid>
+        <NavLink
+          activeClassName="active"
+          exact
+          to="/janken"
+        >
+          janken
+        </NavLink>
           {
             texts.map(({text, id}) => (
               <CardContainer key={id} text={text} />

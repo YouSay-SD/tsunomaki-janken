@@ -1,14 +1,9 @@
 import React from 'react';
 import { Menu } from '../components';
 import { animated, useSprings } from 'react-spring';
-import { ModalContainer } from './modal';
-import { useDispatch } from 'react-redux';
-import { startGoogleLogin } from '../actions/auth';
-import { startFacebookLogin } from '../actions/auth';
 import { NavLink } from 'react-router-dom';
 
 export function MenuContainer() {
-  const dispatch = useDispatch();
   const text = [...'Start Game!'];
 
   const base = {
@@ -19,15 +14,6 @@ export function MenuContainer() {
 
   const springs = useSprings(text.length, text.map((t, i) => ({ ...base, delay: 100 * i })))
 
-  const handleGoogleLogin = () => {
-    dispatch(startGoogleLogin());
-  }
-
-  const handleFacebookLogin = async () => {
-    await dispatch(startFacebookLogin());
-    
-  }
-
   return (
     <Menu>
       <Menu.Logo>
@@ -35,35 +21,16 @@ export function MenuContainer() {
       </Menu.Logo>
 
       <Menu.Navbar>
-        <ModalContainer 
-          button={
-            <div style={{cursor: 'pointer'}}>
-              {springs.map((s, i) => (
-                <animated.span key={`char${i}`} style={s}>
-                  {text[i] === ' ' ? <>&nbsp;</> : text[i]}
-                </animated.span>
-              ))}
-            </div>
-          } 
-        >
-          <button onClick={handleGoogleLogin}>Login Google</button>
-          <button onClick={handleFacebookLogin}>Login Facebook</button>
-        </ModalContainer>
-
-        <NavLink
+        <NavLink 
           activeClassName="active"
           exact
           to="/janken"
         >
-          janken
-        </NavLink>
-
-        <NavLink
-          activeClassName="active"
-          exact
-          to="/message-board"
-        >
-          message board
+          {springs.map((s, i) => (
+            <animated.span key={`char${i}`} style={s}>
+              {text[i] === ' ' ? <>&nbsp;</> : text[i]}
+            </animated.span>
+          ))}
         </NavLink>
       </Menu.Navbar>
     </Menu>
