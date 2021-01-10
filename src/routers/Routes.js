@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { 
   useLocation,
   Switch,
   Route,
   Redirect,
 } from 'react-router-dom';
+import { firebase } from '../firebase/firebase-config';
 import { animated, useTransition } from 'react-spring';
 import Home from '../pages/home';
 import Janken from '../pages/janken';
 import MessageBoard from '../pages/message-board';
+import { useDispatch } from 'react-redux';
+import { login } from '../actions/auth';
 
 export const Routes = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(( user ) => {
+      if ( user?.uid ) {
+        dispatch(login( user.uid, user.displayName, user.photoURL ));
+      }
+    })
+  }, [dispatch])
 
   const location = useLocation();
   const transitions = useTransition(location, location => location.pathname, {

@@ -1,15 +1,15 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { startGoogleLogin } from '../actions/auth';
+import { shareScore } from '../actions/game';
 import { useForm } from '../hooks/use-form';
 import { ModalContainer } from './modal';
 
 export const ShareScore = () => {
 
-  const history = useHistory();
   const dispatch = useDispatch();
-  const { isLogged } = useSelector(state => state.auth); 
+  const { name, avatar, isLogged } = useSelector(state => state.auth); 
+  const { score } = useSelector(state => state.game); 
 
   const [ formValues, handleInputChange ] = useForm({
     textArea: ''
@@ -17,14 +17,22 @@ export const ShareScore = () => {
 
   const { textArea } = formValues;
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // history.push('/message-board');
+  const newScore = {
+    name,
+    avatar,
+    message: textArea,
+    win: score.win,
+    lose: score.lose,
+    draw: score.draw
   }
 
-  const handleGoogleLogin = (e) => {
-    e.preventDefault();
-    dispatch(startGoogleLogin());
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(shareScore( newScore ))
+  }
+
+  const handleGoogleLogin = () => {
+    dispatch(startGoogleLogin())
   }
 
   return (
@@ -32,20 +40,27 @@ export const ShareScore = () => {
        <ModalContainer
           button={<button>Share Result & leave a message</button>}
         >
-          <form onSubmit={ (isLogged) ? handleSubmit : handleGoogleLogin }>
-            <h3>Leave your message here, it will be posted on the message board</h3>
-            <textarea 
-              placeholder="Your Message..." 
-              name="textArea"
-              value={ textArea }
-              onChange={ handleInputChange }
-            />
-            <button 
-              type="submit"
-            >
-              Send
-            </button>
-          </form>
+          {
+            ( isLogged ) 
+            ? 
+              <form onSubmit={ handleSubmit }>
+                <h3>Leave your message here, it will be posted on the message board</h3>
+                <textarea 
+                  placeholder="Your Message..." 
+                  name="textArea"
+                  value={ textArea }
+                  onChange={ handleInputChange }
+                />
+                <button 
+                  type="submit"
+                >
+                  Send
+                </button>
+              </form>
+            : <>
+                <button onClick={ handleGoogleLogin }>Google Login</button>
+              </>
+          }
         </ModalContainer>
     </div>
   )

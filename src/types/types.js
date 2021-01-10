@@ -9,4 +9,5 @@ export const types = {
   gameLose: '[Game] Game Lose',
   gameDraw: '[Game] Game Draw',
   gameReset: '[Game] Game Reset',
+  gameShareScore: '[Game] Game Share Score',
 }

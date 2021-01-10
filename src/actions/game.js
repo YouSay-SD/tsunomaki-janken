@@ -1,3 +1,4 @@
+import { db } from "../firebase/firebase-config";
 import { types } from "../types/types";
 
 export const setGameInProgress = (status) => ({
@@ -30,3 +31,10 @@ export const gameDraw = () => ({
 export const gameReset = () => ({
   type: types.gameReset,
 })
+
+export const shareScore = ( newScore ) => {
+  return async ( dispatch, getState ) => {
+    const { uid } = await getState().auth;
+    db.collection(`${ uid }/game/score`).add( newScore );
+  }
+}

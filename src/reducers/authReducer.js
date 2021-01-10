@@ -10,6 +10,7 @@ export const authReducer = (state = initialState, action) => {
       return {
         uid: action.payload.uid,
         name: action.payload.displayName,
+        avatar: action.payload.photoURL,
         isLogged: true,
       }
 
