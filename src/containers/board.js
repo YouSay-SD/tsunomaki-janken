@@ -3,6 +3,8 @@ import Board from '../components/board';
 import { CardContainer } from './card';
 import Masonry from 'masonry-layout';
 import { NavLink } from 'react-router-dom';
+import { getScores } from '../helpers/get-scores';
+import { startGetScores } from '../actions/game';
 
 export function BoardContainer() {
   
@@ -17,6 +19,20 @@ export function BoardContainer() {
       gutter: 20
     });
   }, [])
+
+   
+  useEffect(() => {
+
+    handleGetScores();
+  }, [])
+
+
+  const handleGetScores = async () => {
+    const scores = getScores();
+  }
+
+
+  // const scores = getScores();
 
   const texts = [
     {
